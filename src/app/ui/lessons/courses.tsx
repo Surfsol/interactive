@@ -11,7 +11,7 @@ export default function Courses() {
       <div onClick={()=> setLessonStatus(nextLesson)}>Next Lesson ${nextLesson}</div>
       <div>${lessonStatus}</div>
       <div>${lessonHistory}</div>
-      {lessonStatus && (<CourseMaterial/>)}
+      {lessonStatus && (<CourseMaterial setLessonStatus={setLessonStatus} lessonNumber={lessonStatus}/>)}
     </main>
   );
 }

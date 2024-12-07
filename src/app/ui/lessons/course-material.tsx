@@ -7,21 +7,30 @@ interface Section {
   url: string;
 }
 
-export default function CourseMaterial() {
-  const [lessonStatus, setLessonStatus] = useState<string | undefined>();
-  const nextLesson = '';
-  const lessonHistory = '';
+interface CourseMaterialProps {
+  lessonNumber: string
+  setLessonStatus: React.Dispatch<React.SetStateAction<string | undefined>>;
+}
+
+
+const CourseMaterial: React.FC <CourseMaterialProps> = ({setLessonStatus, lessonNumber}) => {
+  
+  //const nextLesson = 'nextLesson';
   const lessonSection: Section[] = [
     { type: 'video', url: 'https://www.youtube.com/embed/SABmXbFFek0' },
   { type: 'video', url: 'https://www.youtube.com/embed/bPbnfWeu9Ok' },
   ];
-  // dynamically render lessons using components
-  // sections of lessons will include PlayVideo, dialog, fillInBlank
-  console.log({ lessonSection });
+
+  const handleLesson = () => {
+    setLessonStatus(undefined)
+  }
   return (
     <main className={styles.mainContainer}>
-      <div onClick={() => setLessonStatus(nextLesson)}>
-        Next Lesson ${nextLesson}
+      <div onClick={handleLesson}>
+        Next Lesson {lessonNumber}
+      </div>
+      <div onClick={handleLesson}>
+        Back
       </div>
       {lessonSection.map(({ type, url }, idx) => {
         if (type === 'video') {
@@ -41,3 +50,4 @@ export default function CourseMaterial() {
     </main>
   );
 }
+export default CourseMaterial
