@@ -1,0 +1,18 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  min-height: 100vh; /* Full viewport height for vertical centering */
+  background-color: #f5f5f5; /* Optional background color for styling */
+}
+.videoContainer {
+  margin: 20px 0; /* Add vertical spacing between videos */
+  width: 80%;     /* Optional: Adjust width for consistent sizing */
+}
+
+.videoPlayer {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
