@@ -17,7 +17,7 @@ const links = [
     href: '/dashboard/level-test',
     icon: AcademicCapIcon,
   },
-  { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
+  { name: 'Lessons', href: '/dashboard/lessons', icon: UserGroupIcon },
 ];
 
 export default function NavLinks() {
