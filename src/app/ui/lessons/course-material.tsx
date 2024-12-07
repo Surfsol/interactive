@@ -39,7 +39,6 @@ const CourseMaterial: React.FC <CourseMaterialProps> = ({setLessonStatus, lesson
               {
                 <VideoPlayer
                   className={styles.videoplayer}
-                  controls
                   src={url}
                 />
               }
