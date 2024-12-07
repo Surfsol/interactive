@@ -2,12 +2,12 @@
 import { useState } from 'react';
 
 export default function CourseMaterial() {
-    const [lessonStatus, setLessonStatus] = useState()
+    const [lessonStatus, setLessonStatus] = useState<string | undefined>()
   const nextLesson = '';
   const lessonHistory = ''
   return (
     <main>
-      <div>Next Lesson ${nextLesson}</div>
+      <div onClick={()=> setLessonStatus(nextLesson)}>Next Lesson ${nextLesson}</div>
       <div>${lessonStatus}</div>
       <div>${lessonHistory}</div>
     </main>
