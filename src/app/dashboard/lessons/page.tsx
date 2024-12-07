@@ -1,7 +1,7 @@
 
 
-import Courses from './courses/page';
-import CourseMaterial from './course-material/page';
+import Courses from '../../ui/lessons/courses/page';
+import CourseMaterial from '../../ui/lessons/course-material/page';
 
 export default async function Lessons() {
  
