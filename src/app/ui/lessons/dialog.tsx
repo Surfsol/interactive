@@ -56,7 +56,7 @@ const Dialog: React.FC<DialogProps> = ({ content }) => {
     setIdPressed(null);
     if (person === 'all') {
       for (const [idD, line] of Object.entries(content)) {
-        const [_, linePerson, lineText] = line.split('**');
+        const [linePerson, lineText] = line.split('**');
         await playLine(idD, linePerson, lineText);
       }
     } else {
@@ -73,7 +73,7 @@ const Dialog: React.FC<DialogProps> = ({ content }) => {
         Play All
       </button>
       {Object.entries(content).map(([id, line]) => {
-        const [_, speaker, lineText] = line.split('**');
+        const [speaker, lineText] = line.split('**');
         return (
           <div key={id} onClick={() => speak(id, speaker, lineText)}>
             <div
