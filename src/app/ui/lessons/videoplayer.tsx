@@ -1,7 +1,7 @@
 'use client'
 
 interface VideoPlayerProps {
-  src: string; // Video source URL
+  src: string | undefined; // Video source URL
   poster?: string; // Thumbnail image
   className?: string; // Optional CSS classes for styling
 }
