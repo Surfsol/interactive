@@ -6,18 +6,7 @@ import { dialogScript } from '@/app/utils/dialogScript';
 import Dialog from './dialog';
 import FillInBlank from './fill-in-blank';
 import { fillInBlank1, fillInBlank2 } from '@/app/utils/dialogScript';
-interface Answers {
-  [key:string]: string[]
-}
-interface Sentences {
-  [key:string]: string
-}
-
-interface FillInBlankProps {
-  title: string;
-  sentences: Sentences;
-  answers: Answers;
-}
+import {  FillInBlankProps } from '@/app/utils/interfaces';
 
 interface Section {
   type: string;

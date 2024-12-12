@@ -1,19 +1,7 @@
 'use client';
 
 import { Fragment, useState } from 'react';
-
-interface Answers {
-  [key: string]: string[];
-}
-interface Sentences {
-  [key: string]: string;
-}
-
-interface FillInBlankProps {
-  title: string;
-  sentences: Sentences;
-  answers: Answers;
-}
+import { FillInBlankProps } from '@/app/utils/interfaces';
 
 interface FillProps {
   blank: FillInBlankProps; // Video source URL
@@ -24,7 +12,6 @@ const FillInBlank: React.FC<FillProps> = ({ blank }) => {
   const [blankUpdate, setBlankUpdate] = useState<FillInBlankProps>(blank);
   console.log({ blankUpdate });
 
- 
   const handleAnswers = (idx: string, value: string) => {
     console.log('Updating Answer:', { idx, value });
     setBlankUpdate((prevState) => ({
@@ -35,25 +22,22 @@ const FillInBlank: React.FC<FillProps> = ({ blank }) => {
       },
     }));
   };
-  
 
   return (
     <div>
       <div>{blank.title}</div>
       {Object.entries(blank.sentences).map(([num, line]) => {
         const arr = line.split('*');
-        
+
         return (
           <div key={num}>
             {arr.map((e, idx) => {
               if (e.includes('$')) {
-              const arrE = e.split('$')
+                const arrE = e.split('$');
                 return (
                   <Fragment key={`${arrE[1]}${idx}`}>
-                    <input 
-                      onChange={(e) =>
-                        handleAnswers(arrE[1], e.target.value)
-                      }
+                    <input
+                      onChange={(e) => handleAnswers(arrE[1], e.target.value)}
                     />
                   </Fragment>
                 );
