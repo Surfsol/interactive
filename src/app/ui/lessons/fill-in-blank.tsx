@@ -21,30 +21,38 @@ interface FillProps {
 }
 
 const FillInBlank: React.FC<FillProps> = ({ blank }) => {
-  const [blankUpdate, setBlankUpdate] = useState<object>(blank);
+  const [blankUpdate, setBlankUpdate] = useState<FillInBlankProps>(blank);
   console.log({ blankUpdate });
 
-  const handleAnswers = (idx: string, e: string) => {
-    setBlankUpdate({
-      ...blankUpdate, anwswers : [idx][1] === e
-    });
+ 
+  const handleAnswers = (idx: string, value: string) => {
+    console.log('Updating Answer:', { idx, value });
+    setBlankUpdate((prevState) => ({
+      ...prevState,
+      answers: {
+        ...prevState.answers,
+        [idx]: [prevState.answers[idx][0], value], // Update the second element (null -> value)
+      },
+    }));
   };
-
+  
 
   return (
     <div>
       <div>{blank.title}</div>
       {Object.entries(blank.sentences).map(([num, line]) => {
         let arr = line.split('*');
+        
         return (
           <div key={num}>
             {arr.map((e, idx) => {
-              if (e === '%') {
+              if (e.includes('$')) {
+              let arrE = e.split('$')
                 return (
-                  <Fragment key={`${num}${idx}`}>
+                  <Fragment key={`${arrE[1]}${idx}`}>
                     <input 
                       onChange={(e) =>
-                        handleAnswers(idx.toString(), e.target.value)
+                        handleAnswers(arrE[1], e.target.value)
                       }
                     />
                   </Fragment>

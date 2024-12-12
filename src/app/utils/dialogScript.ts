@@ -14,12 +14,12 @@ export const dialogScript = {
 export const fillInBlank1 = {
   title: 'Part 1: Colors of Foods',
   sentences: {
-    '1': 'Bananas are *%*.',
-    '2': 'Strawberries are *%*.',
-    '3': 'Spinach is *%*.',
-    '4': 'Chocolate is *%*.',
-    '5': 'Carrots are *%*.',
-    '6': 'Blueberries are *%*.',
+    '1': 'Bananas are *$1*.',
+    '2': 'Strawberries are *$2*.',
+    '3': 'Spinach is *$3*.',
+    '4': 'Chocolate is *$4*.',
+    '5': 'Carrots are *$5*.',
+    '6': 'Blueberries are *$6*.',
   },
   answers: {
     '1': ['yellow', null],
@@ -36,13 +36,13 @@ export const fillInBlank1 = {
 export const fillInBlank2 = {
   title: 'Part 2: Colors of Fruits',
   sentences: {
-    '1': "Apples are *%*.",
-    '2': "Grapes are ***.",
-    '3': "Bananas are ***.",
-    '4': "Peanuts are ***.",
-    '5': "Lettuce is ***.",
-    '6': "Carrots are ***.",
-    '7': "Onions are ***.",
+    '1': "Apples are *$1*.",
+    '2': "Grapes are *$2*.",
+    '3': "Bananas are *$3*.",
+    '4': "Peanuts are *$4*.",
+    '5': "Lettuce is *$5*.",
+    '6': "Carrots are *$6*.",
+    '7': "Onions are *$7*.",
   },
   answers: {
     '1': ['red'],
