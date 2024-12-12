@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useState, useEffect } from 'react';
+import { Fragment, useState } from 'react';
 
 interface Answers {
   [key: string]: string[];
@@ -41,13 +41,13 @@ const FillInBlank: React.FC<FillProps> = ({ blank }) => {
     <div>
       <div>{blank.title}</div>
       {Object.entries(blank.sentences).map(([num, line]) => {
-        let arr = line.split('*');
+        const arr = line.split('*');
         
         return (
           <div key={num}>
             {arr.map((e, idx) => {
               if (e.includes('$')) {
-              let arrE = e.split('$')
+              const arrE = e.split('$')
                 return (
                   <Fragment key={`${arrE[1]}${idx}`}>
                     <input 
