@@ -12,6 +12,7 @@ export const dialogScript = {
 };
 
 export const fillInBlank1 = {
+  picture: "/images/fruits_and_vegetables.webp",
   title: 'Part 1: Colors of Foods',
   sentences: {
     '1': 'Bananas are *$1*.',

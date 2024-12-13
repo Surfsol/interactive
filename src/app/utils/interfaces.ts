@@ -9,4 +9,5 @@ export interface Answers {
     title: string;
     sentences: Sentences;
     answers: Answers;
+    picture?: string
   }
