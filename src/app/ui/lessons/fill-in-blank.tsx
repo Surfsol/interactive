@@ -2,6 +2,7 @@
 
 import { Fragment, useState } from 'react';
 import { FillInBlankProps } from '@/app/utils/interfaces';
+import Image from 'next/image';
 
 interface FillProps {
   blank: FillInBlankProps; // Video source URL
@@ -25,7 +26,18 @@ const FillInBlank: React.FC<FillProps> = ({ blank }) => {
 
   return (
     <div>
-      <div>{blank.title}</div>
+      <div style={{textAlign: 'center'}}>
+        {blank.title}
+        {blank.picture && (
+          <Image
+            src={blank.picture} // Path relative to the public folder
+            alt='Fruits and Vegetables'
+            width={290}
+            height={100}
+            style={{ display: 'block', margin: '0 auto' }}
+          />
+        )}
+      </div>
       {Object.entries(blank.sentences).map(([num, line]) => {
         const arr = line.split('*');
 
